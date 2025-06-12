@@ -23,7 +23,6 @@ ENABLED_CONFIG="\
   		--enable-decoder=h264 \
     		--enable-decoder=aac \
       		--enable-decoder=hevc \
-		--enable-decoder=opus \
 		--enable-shared "
 
 
