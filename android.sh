@@ -13,17 +13,9 @@ ENABLED_CONFIG="\
 		--enable-avcodec \
 		--enable-avformat \
 		--enable-avutil \
-    		--enable-jni \
-      		--enable-mediacodec \
-  		--enable-demuxer=mov \
-    		--enable-demuxer=matroska \
-		--enable-parser=h264 \
-  		--enable-parser=aac \
-    		--enable-parser=hevc \
-  		--enable-decoder=h264 \
-    		--enable-decoder=aac \
-      		--enable-decoder=hevc \
-		--enable-shared "
+  		--enable-demuxer=* \
+		--enable-parser=* \
+		--enable-static "
 
 
 ### Disable FFMPEG BUILD MODULES ####
@@ -38,7 +30,7 @@ DISABLED_CONFIG="\
 		--disable-libxml2 \
 		--disable-avdevice \
 		--disable-network \
-		--disable-static \
+		--disable-shared \
 		--disable-debug \
 		--disable-ffplay \
   		--disable-ffprobe \
@@ -158,7 +150,7 @@ for ARCH in "${ARCH_LIST[@]}"; do
 	    EXTRA_CXXFLAGS="-O3 -march=$TARGET_CPU -fomit-frame-pointer"
             		
             EXTRA_CONFIG="\
-            		  "
+            		  --disable-asm"
             ;;
         "x86"|"i686")
             echo -e "\e[1;32m$ARCH Libraries\e[0m"
